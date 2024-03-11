@@ -34,6 +34,7 @@ website: [batch.money](https://batch.money)
 | Holesky       | [0x1b285Ffd0B19805947E7F285A922d2fFe5c4FE4d](https://holesky.etherscan.io/address/0x1b285Ffd0B19805947E7F285A922d2fFe5c4FE4d)                                               |
 | Sepolia       | [0x800A2bE9B6259E252eDE4a5a041C23ab994F2962](https://sepolia.etherscan.io/address/0x800A2bE9B6259E252eDE4a5a041C23ab994F2962)                                               |
 | Scroll Sepolia       | [0x1726348d59697D19Ce307E662da6a631381dB8dD](https://sepolia-blockscout.scroll.io/address/0x1726348d59697D19Ce307E662da6a631381dB8dD)                                               |
+| Merlin Chain         | [0x6e4e372baF0C3Ba74CdA7E7E6Ef4bF526A209Ec2](https://scan.merlinchain.io/address/0x6e4e372baF0C3Ba74CdA7E7E6Ef4bF526A209Ec2)                                               |
 
 ## Test Results
 
