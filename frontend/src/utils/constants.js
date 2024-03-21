@@ -95,6 +95,12 @@ export const supportedChains = [
     blockExplorer: "https://sepolia.etherscan.io/",
     name: "sepolia",
   },
+  {
+    chainId: 4200,
+    batchTransferAddress: "0x6e4e372baF0C3Ba74CdA7E7E6Ef4bF526A209Ec2",
+    blockExplorer: "https://scan.merlinchain.io/",
+    name: "merlin chain",
+  },
 ];
 
 0x1b285Ffd0B19805947E7F285A922d2fFe5c4FE4d
