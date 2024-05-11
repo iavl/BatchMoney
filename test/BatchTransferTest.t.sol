@@ -57,17 +57,22 @@ contract BatchTransferTest is Test {
         for (uint256 i = 0; i < recipients.length; i++){
             assertEq(recipients[i].balance, amounts[i]);
         }
+        assertEq(address0.balance, 1000 ether - total);
     }
 
     function testBatchTransferERC20() public {
+        uint256 balanceBefore = IERC20(token0).balanceOf(address0);
+
         vm.prank(address0);
-        //console.log(address0.balance);
         iBatch.batchTransferERC20(address(token0), total, recipients, amounts);
 
         // check balance
         for (uint256 i = 0; i < recipients.length; i++){
             assertEq(IERC20(token0).balanceOf(recipients[i]), amounts[i]);
         }
+
+        uint256 balanceAfter = IERC20(token0).balanceOf(address0);
+        assertEq(balanceAfter, balanceBefore - total);
     }
 
     function testDisperseDeploy() public {
