@@ -5,6 +5,7 @@ import "foundry-huff/HuffDeployer.sol";
 import "forge-std/Test.sol";
 import "forge-std/console.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
+import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
 contract BatchTransferTest is Test {
     IBatchTransfer iBatch;
@@ -27,7 +28,7 @@ contract BatchTransferTest is Test {
         iBatch = IBatchTransfer(HuffDeployer.deploy("BatchTransfer"));
         disperse = new Disperse();
 
-        for(uint i; i < 1000; i++){
+        for(uint i = 1; i < 1000; i++){
             recipients.push(address(uint160(address0)+uint160(i)));
             amounts.push(i);
             total += i;
@@ -51,12 +52,22 @@ contract BatchTransferTest is Test {
         vm.prank(address0);
         //console.log(address0.balance);
         iBatch.batchTransferETH{value: total}(recipients, amounts);
+
+        // check balance
+        for (uint256 i = 0; i < recipients.length; i++){
+            assertEq(recipients[i].balance, amounts[i]);
+        }
     }
 
     function testBatchTransferERC20() public {
         vm.prank(address0);
         //console.log(address0.balance);
         iBatch.batchTransferERC20(address(token0), total, recipients, amounts);
+
+        // check balance
+        for (uint256 i = 0; i < recipients.length; i++){
+            assertEq(IERC20(token0).balanceOf(recipients[i]), amounts[i]);
+        }
     }
 
     function testDisperseDeploy() public {
