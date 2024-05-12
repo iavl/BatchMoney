@@ -60,6 +60,12 @@ export const supportedChains = [
     name: "base",
   },
   {
+    chainId: 12553,
+    batchTransferAddress: "0xC44c86E0Aaa90d914b194c347aaF9cf97823E3C8",
+    blockExplorer: "https://scan.rss3.io/",
+    name: "rss3 vsl mainnet",
+  },
+  {
     chainId: 17000,
     batchTransferAddress: "0x1b285Ffd0B19805947E7F285A922d2fFe5c4FE4d",
     blockExplorer: "https://holesky.etherscan.io/",
